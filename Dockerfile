@@ -20,7 +20,7 @@ RUN conda config --add channels conda-forge && \
 RUN conda create -y -n flagembedding python=3.11
 ENV CONDA_DEFAULT_ENV=flagembedding
 ENV PATH="/root/miniconda3/bin:/opt/conda/envs/flagembedding/bin:${PATH}"
-WORKDIR /root/CosyVoice
+WORKDIR /root/app
 COPY requirements.txt .
 COPY download_model.py .
 COPY api.py .
