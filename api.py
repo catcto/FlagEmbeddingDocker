@@ -10,7 +10,6 @@ from FlagEmbedding import FlagAutoModel
 app = FastAPI(title="FlagEmbedding API")
 
 MODEL_NAMES = [
-    "BAAI/bge-m3",
     "BAAI/bge-large-zh-v1.5"
 ]
 

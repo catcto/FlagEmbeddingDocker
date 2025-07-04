@@ -22,8 +22,6 @@ ENV CONDA_DEFAULT_ENV=flagembedding
 ENV PATH="/root/miniconda3/bin:/opt/conda/envs/flagembedding/bin:${PATH}"
 WORKDIR /root/app
 COPY requirements.txt .
-COPY download_model.py .
-COPY api.py .
 RUN pip install -r requirements.txt
 
 # Set environment variables
@@ -31,5 +29,7 @@ ENV API_HOST=0.0.0.0
 ENV API_PORT=8080
 
 # Run
+COPY download_model.py .
+COPY api.py .
 RUN python download_model.py
 CMD ["python", "api.py"]

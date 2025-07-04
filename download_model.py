@@ -4,7 +4,6 @@
 from FlagEmbedding import FlagAutoModel
 
 MODEL_NAMES = [
-    "BAAI/bge-m3",
     "BAAI/bge-large-zh-v1.5"
 ]
 
@@ -13,7 +12,7 @@ def download_all_models():
         model = FlagAutoModel.from_finetuned(name, 
                                      query_instruction_for_retrieval="为这个句子生成表示以用于检索相关文章：",
                                      use_fp16=True,
-                                     devices=['cuda:0'])
+                                     devices='cpu')
         _ = model.encode(["你好BGE"])
         print("Model loaded successfully!")
 
