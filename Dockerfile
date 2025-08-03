@@ -39,12 +39,10 @@ RUN pip install -r requirements.txt
 ENV API_HOST=0.0.0.0
 ENV API_PORT=8080
 
-# Copy application files
-COPY download_model.py .
-COPY api.py .
-
 # Download model
+COPY download_model.py .
 RUN python download_model.py
 
 # Run the application
+COPY api.py .
 CMD ["python", "api.py"]
